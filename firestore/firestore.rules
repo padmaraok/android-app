@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    function hasWriteKey(shortId, provided) {
+      return get(/databases/$(db)/documents/keys/$(shortId)).data.writeKey == provided;
+    }
+
+    match /lists/{shortId} {
+      allow read: if resource.data.publicRead == true;
+      allow write: if false; // immutable in MVP (rotate handled via function)
+
+      match /items/{itemId} {
+        allow read: if true;
+        allow create, update, delete: if
+          request.resource.data.k != null && hasWriteKey(shortId, request.resource.data.k);
+      }
+    }
+
+    match /keys/{shortId} {
+      allow read: if false;
+      allow write: if false; // only via Cloud Functions
+    }
+  }
+}

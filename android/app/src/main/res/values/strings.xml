@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shared Todo</string>
+    <string name="default_notification_channel_id">todo_channel</string>
+
+    <!-- Screen titles -->
+    <string name="home_title">Shared Todo</string>
+    <string name="list_title">Todo List</string>
+
+    <!-- Buttons -->
+    <string name="new_list">New List</string>
+    <string name="add_item">Add Item</string>
+    <string name="share_read_link">Share Read Link</string>
+    <string name="share_edit_link">Share Edit Link</string>
+    <string name="reset_write_key">Reset Write Key</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Messages -->
+    <string name="read_only_banner">Read-only mode</string>
+    <string name="list_created">List created successfully!</string>
+    <string name="key_rotated">Write key reset successfully!</string>
+    <string name="item_added">Item added</string>
+    <string name="item_updated">Item updated</string>
+    <string name="item_deleted">Item deleted</string>
+    <string name="error_generic">An error occurred</string>
+    <string name="error_network">Network error</string>
+    <string name="error_permission">Permission denied</string>
+
+    <!-- Hints -->
+    <string name="item_text_hint">Enter todo item...</string>
+    <string name="list_code_hint">Enter list code...</string>
+
+    <!-- Labels -->
+    <string name="edit_item">Edit Item</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="mark_complete">Mark as complete</string>
+    <string name="mark_incomplete">Mark as incomplete</string>
+</resources>

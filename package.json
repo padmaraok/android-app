@@ -1,0 +1,24 @@
+{
+  "name": "shared-todo-app",
+  "version": "1.0.0",
+  "description": "Cross-platform shared todo list application",
+  "private": true,
+  "workspaces": [
+    "web",
+    "functions"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
+    "deploy:functions": "cd functions && npm run deploy",
+    "deploy:firestore": "firebase deploy --only firestore:rules",
+    "deploy:web": "cd web && npm run build && firebase deploy --only hosting"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
